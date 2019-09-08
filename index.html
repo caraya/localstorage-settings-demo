@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Do font attributes and line height affect reading?</title>
     <link rel="stylesheet" href="css/main.css" />
-    <!-- <script defer src="js/main.js"></script> -->
+    <script defer src="js/main.js"></script>
   </head>
 
   <body>
@@ -277,69 +277,5 @@
         and I’m open to other ways of telling the truth.
       </p>
     </div>
-
-    <script>
-      const weight = document.getElementById('robotoWeight');
-      const weightSlider = document.querySelector('.weightSlider');
-      weightSlider.innerHTML = weight.value;
-
-      const width = document.getElementById('robotoWidth');
-      const widthSlider = document.querySelector('.widthSlider');
-      widthSlider.innerHTML = width.value;
-
-      const lineHeight = document.getElementById('lineHeight');
-      const lineHeightSlider = document.querySelector('.lineHeightSlider');
-      lineHeightSlider.innerHTML = lineHeight.value;
-
-      function setRootVar(name, value) {
-        let rootStyles = document.styleSheets[0].cssRules[1].style;
-        rootStyles.setProperty('--' + name, value);
-      }
-      function hasLocalStorage() {
-        try {
-          localStorage.setItem(mod, mod);
-          localStorage.removeItem(mod);
-          return true;
-        } catch (e) {
-          console.log('Local Storage Not Supported');
-          return false;
-        }
-      }
-
-      weight.oninput = function() {
-        weightSlider.innerHTML = weight.value;
-        // setting the style
-        setRootVar('font-weight', ' "wght" ' + weight.value);
-        localStorage.setItem('font-weight', ' "wght" ' + weight.value);
-      };
-
-      width.oninput = function() {
-        widthSlider.innerHTML = width.value;
-        setRootVar('font-width', ' "wdth" ' + width.value);
-        localStorage.setItem('font-width', ' "wdth" ' + width.value);
-      };
-
-      lineHeight.oninput = function() {
-        lineHeightSlider.innerHTML = lineHeight.value;
-        setRootVar('line-height', lineHeight.value);
-        localStorage.setItem('line-height', lineHeight.value);
-      };
-
-      // if (hasLocalStorage) {
-      //   setRootVar(
-      //     'font-weight',
-      //     ' "wght" ' + localStorage.getItem('font-weight'),
-      //   );
-
-      //   setRootVar(
-      //     'font-width',
-      //     ' "wdth" ' + localStorage.getItem('font-width'),
-      //   );
-
-      //   if (localStorage.getItem('line-height') !== null) {
-      //     setRootVar('line-height', localStorage.getItem('line-height'));
-      //   }
-      // }
-    </script>
   </body>
 </html>
