@@ -1,0 +1,61 @@
+@font-face {
+  font-family: Roboto;
+  src: url('../fonts/Roboto-min-VF.woff2');
+}
+
+/* Defaults */
+:root {
+  --line-height: 1;
+  --font-weight: 'wght' 400;
+  --font-width: 'wdth' 100;
+  font-family: Roboto, sans-serif;
+  font-size: 100%;
+}
+
+.settings {
+  margin: 1em;
+}
+
+/* legend and sliders */
+legend {
+  background-color: #000;
+  color: #fff;
+  padding: 3px 6px;
+}
+
+label {
+  margin-top: 1rem;
+  display: block;
+  font-size: 0.8rem;
+}
+
+.content {
+  /* Font related stuff I'm testing*/
+  line-height: var(--line-height);
+  font-variation-settings: var(--font-weight), var(--font-width);
+}
+
+/* Layout related*/
+
+body {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 2fr 2fr 1fr 1fr 2fr;
+  grid-column-gap: 2vw;
+  grid-row-gap: 2vh;
+  align-content: start;
+}
+
+.settings {
+  grid-column: 2/3;
+  grid-row: 2;
+}
+
+.header {
+  grid-column: 4/8;
+  grid-row: 1/1;
+}
+
+.content {
+  grid-column: 4/8;
+  grid-row: 2;
+}
